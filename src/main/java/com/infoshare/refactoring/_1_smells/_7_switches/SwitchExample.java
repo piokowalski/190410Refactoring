@@ -1,4 +1,4 @@
-package com.infoshare.refactoring._1_smells._8_switches;
+package com.infoshare.refactoring._1_smells._7_switches;
 
 public class SwitchExample {
 
@@ -14,10 +14,6 @@ public class SwitchExample {
 
         printCalculations(circle);
         printCalculations(rectangle);
-
-        // TODO jeden obiekt reprezentuje de facto 2 rozne biznesowo typy
-        // TODO problemy z dodaniem kolejnego typu bo rozrzucona odpowiedzialnosc (zawsze sie zastanawiam o ilu rzeczach bede musial pamietac dodajac cos nowego do aplikacji)
-        // TODO wymienic na abstrakcje
     }
 
     private static void printCalculations(Shape shape) {

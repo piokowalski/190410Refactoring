@@ -1,4 +1,4 @@
-package com.infoshare.refactoring._1_smells._4_nulls;
+package com.infoshare.refactoring._1_smells._3_nulls;
 
 public class NullExample {
 
@@ -10,10 +10,6 @@ public class NullExample {
 
         printAssignedDoctor(maciekPatient);
         printAssignedDoctor(anastazjaPatient);
-
-        // TODO: Wyjaśnić, że nulle nie przekazują intencji a Optionale tak
-        // TODO: pokazać niebezpieczeństwo nulli -> dodać funcjonalność assignment (Patient Date) i print assignment i zapomniec sprawdzic nulle
-        // TODO: zrefactorowac
     }
 
     private static void printAssignedDoctor(Patient patient) {

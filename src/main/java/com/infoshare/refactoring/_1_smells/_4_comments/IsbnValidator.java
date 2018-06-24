@@ -1,4 +1,4 @@
-package com.infoshare.refactoring._1_smells._5_comments;
+package com.infoshare.refactoring._1_smells._4_comments;
 
 public class IsbnValidator {
 

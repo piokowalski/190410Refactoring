@@ -1,4 +1,4 @@
-package com.infoshare.refactoring._1_smells._7_many_small_things;
+package com.infoshare.refactoring._1_smells._5_many_small_things;
 
 import java.util.Arrays;
 
@@ -20,11 +20,5 @@ public class SmallThingsExample {
         System.out.println("Total price: " + basketPriceCalculator.calculateTotalPrice(furnitureBasket));
         System.out.println("Total price: " + basketPriceCalculator.calculateTotalPrice(kitchenBasket));
         System.out.println("Total price: " + basketPriceCalculator.calculateTotalPrice(smallBasket));
-
-        // TODO: zwrocic uwage na statyczne faktorki
-        // TODO: złe nazewnictwo
-        // TODO: fory zamiast streamow
-        // TODO: skomplikowane warunki w ifach do metod
-        // TODO: temp zmienne zamiast zwracac wartosci od razu z ifow czy cos
     }
 }

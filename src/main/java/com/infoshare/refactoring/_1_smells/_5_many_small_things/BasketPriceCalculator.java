@@ -1,4 +1,4 @@
-package com.infoshare.refactoring._1_smells._7_many_small_things;
+package com.infoshare.refactoring._1_smells._5_many_small_things;
 
 import java.util.List;
 

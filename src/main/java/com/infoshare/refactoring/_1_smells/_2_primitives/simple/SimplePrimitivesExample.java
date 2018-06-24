@@ -7,9 +7,6 @@ public class SimplePrimitivesExample {
         printReport("Gdańsk", 464254);
         printReport("Gdynia", 246306);
         printReport("Ankamaty", 16);
-
-        // TODO: Pokazać przykład, że można się pomylić i przesłać tutaj na przykład imię i wiem
-        // TODO: Pokazać o ile łatwiej rozbudować funkcjonalność gdy są obiekty (dodać do City powierzchnie / ilość kin)
     }
 
     private static void printReport(String city, long population) {

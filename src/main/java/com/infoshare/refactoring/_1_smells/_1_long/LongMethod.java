@@ -40,7 +40,5 @@ public class LongMethod {
         System.out.println();
 
         System.out.println("Current date is " + LocalDateTime.now());
-
-        // TODO: po prostu powydzielać poszczególne sekcje do metody
     }
 }

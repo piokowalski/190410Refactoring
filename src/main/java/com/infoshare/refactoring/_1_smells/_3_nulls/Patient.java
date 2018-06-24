@@ -1,4 +1,4 @@
-package com.infoshare.refactoring._1_smells._4_nulls;
+package com.infoshare.refactoring._1_smells._3_nulls;
 
 public class Patient {
 

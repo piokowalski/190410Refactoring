@@ -1,4 +1,4 @@
-package com.infoshare.refactoring._1_smells._8_switches;
+package com.infoshare.refactoring._1_smells._7_switches;
 
 public class Shape {
 

@@ -8,15 +8,15 @@ public class NullExample {
         Patient maciekPatient = new Patient("Maciek");
         Patient anastazjaPatient = new Patient("Anastazja", doctor);
 
-        printAssignedDoctor(maciekPatient);
-        printAssignedDoctor(anastazjaPatient);
+        System.out.println(getAssignedDoctorMessage(maciekPatient));
+        System.out.println(getAssignedDoctorMessage(anastazjaPatient));
     }
 
-    private static void printAssignedDoctor(Patient patient) {
+    private static String getAssignedDoctorMessage(Patient patient) {
         if (patient.getDoctor() != null) {
-            System.out.println(String.format("Patient %s is assigned to %s", patient.getName(), patient.getDoctor().getName()));
+            return String.format("Patient %s is assigned to %s", patient.getName(), patient.getDoctor().getName());
         } else {
-            System.out.println(String.format("Patient %s does not have a doctor", patient.getName()));
+            return String.format("Patient %s does not have a doctor", patient.getName());
         }
     }
 }

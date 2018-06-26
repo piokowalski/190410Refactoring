@@ -19,7 +19,7 @@ public class ConstancePrimitivesExample {
                 System.out.println("DANGER!");
                 break;
             case STABLE_SITUATION:
-                System.out.println("STABLE!");
+                System.out.println("Situation is stable");
                 break;
         }
     }

@@ -21,7 +21,7 @@ public class PrimitivesExercise {
 
         String thirdName = "Лена";
         boolean thirdIsFromPoland = false;
-        List<Integer> thirdDocuments = Arrays.asList(PASSPORT, BIRTH_CERTIFICATE);
+        List<Integer> thirdDocuments = Arrays.asList(PASSPORT);
 
         checkDocuments(firstName, firstIsFromPoland, firstDocuments);
         checkDocuments(secondName, secondIsFromPoland, secondDocuments);
@@ -38,14 +38,14 @@ public class PrimitivesExercise {
             return documents.contains(2);
         }
 
-        return documents.contains(1) || documents.contains(3);
+        return documents.contains(1) && documents.contains(3);
     }
 
     private static void printMessage(String name, boolean hasAllDocuments) {
         if (hasAllDocuments) {
             System.out.println("All required documents has been provided by " + name);
+        } else {
+            System.out.println("Several documents are missing. Sorry " + name);
         }
-
-        System.out.println("Several documents are missing. Sorry " + name);
     }
 }

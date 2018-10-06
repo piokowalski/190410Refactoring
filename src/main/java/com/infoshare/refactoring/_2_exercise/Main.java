@@ -9,12 +9,12 @@ public class Main {
         itemService.addItemToStock("Wardrobe", 80, "Standing closet used for storing clothes", false);
         itemService.addItemToStock("Table", 500, "Item of with a flat top and one or more legs", true);
 
-        itemService.showStockReport();
+        System.out.println(itemService.getStockReport());
 
-        itemService.buyItem("Chair", false);
-        itemService.buyItem("Chair", false);
-        itemService.buyItem("Table", false);
-        itemService.buyItem("Wardrobe", false);
-        itemService.buyItem("Desk", true);
+        System.out.println(itemService.buyItem("Chair", false));
+        System.out.println(itemService.buyItem("Chair", false));
+        System.out.println(itemService.buyItem("Table", false));
+        System.out.println(itemService.buyItem("Wardrobe", false));
+        System.out.println(itemService.buyItem("Desk", true));
     }
 }

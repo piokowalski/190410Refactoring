@@ -4,11 +4,13 @@ import java.util.*;
 
 public class ItemService {
 
-    public static List<History> histories = new ArrayList<>();
+    public static final String NEW_LINE = System.lineSeparator();
 
-    public static Map<String, Integer> prices = new HashMap<>();
-    public static Map<String, Boolean> isAvailable = new HashMap<>();
-    public static Map<String, String> descriptions = new HashMap<>();
+    public List<History> histories = new ArrayList<>();
+
+    public Map<String, Integer> prices = new HashMap<>();
+    public Map<String, Boolean> isAvailable = new HashMap<>();
+    public Map<String, String> descriptions = new HashMap<>();
 
     public void addItemToStock(String n, Integer p, String d, Boolean a) {
         prices.put(n, p);
@@ -16,20 +18,24 @@ public class ItemService {
         isAvailable.put(n, a);
     }
 
-    public void showStockReport() {
+    public String getStockReport() {
         Set<String> strings = prices.keySet();
+        StringBuilder builder = new StringBuilder();
         for (String item : strings) {
-            System.out.println("Name: " + item);
-            System.out.println("Description: " + descriptions.get(item));
-            System.out.println("Price: " + prices.get(item));
-            System.out.println("Is available: " + isAvailable.get(item));
+            builder.append("Name: " + item + NEW_LINE);
+            builder.append("Description: " + descriptions.get(item)+ NEW_LINE);
+            builder.append("Price: " + prices.get(item)+ NEW_LINE);
+            builder.append("Is available: " + isAvailable.get(item)+ NEW_LINE);
+            builder.append(NEW_LINE);
         }
+
+        return builder.toString();
     }
 
-    public void buyItem(String item, boolean showTotalSummary) {
+    public String buyItem(String item, boolean showTotalSummary) {
         Boolean cnt = isAvailable.get(item);
         if (cnt == null || cnt == false) {
-            return;
+            return "";
         }
 
         History history = new History();
@@ -56,19 +62,20 @@ public class ItemService {
             List<History> usrhist = histories;
 
             if (usrhist.size() == 0) {
-                System.out.println("You bought nothing yet");
+                return "You bought nothing yet";
             } else {
-                System.out.println("You bought:");
+                StringBuilder builder = new StringBuilder();
+                builder.append("You bought:").append(NEW_LINE);
                 int t = 0;
                 // calculate total items price
                 for (int i = 0; i < usrhist.size(); i++) {
-                    System.out.println(usrhist.get(i).item + " - " + usrhist.get(i).price);
+                    builder.append(usrhist.get(i).item).append(" - ").append(usrhist.get(i).price).append(NEW_LINE);
                     t = t + usrhist.get(i).price;
                 }
-                System.out.println("You spent: " + t);
+                return builder.append("You spent: ").append(t).toString();
             }
         } else {
-            System.out.println("You bought totally " + histories.size() + " items for " + total + ".");
+            return "You bought totally " + histories.size() + " items for " + total + ".";
         }
     }
 }

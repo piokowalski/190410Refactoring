@@ -5,32 +5,26 @@ import java.util.Collections;
 import java.util.List;
 
 public class PrimitivesExercise {
-
-    private static final int PASSPORT = 1;
-    private static final int ID_CARD = 2;
-    private static final int BIRTH_CERTIFICATE = 3;
-
     public static void main(String[] args) {
-        String firstName = "Maciek";
-        boolean firstIsFromPoland = true;
-        List<Integer> firstDocuments = Collections.singletonList(ID_CARD);
+        Person first = new Person("Maciek",true,
+                Collections.singletonList(Documents.ID_CARD));
 
-        String secondName = "Анастасия";
-        boolean secondIsFromPoland = false;
-        List<Integer> secondDocuments = Arrays.asList(PASSPORT, BIRTH_CERTIFICATE);
+        Person second = new Person("Анастасия", false,
+                Arrays.asList(Documents.PASSPORT, Documents.BIRTH_CERTIFICATE));
 
-        String thirdName = "Лена";
-        boolean thirdIsFromPoland = false;
-        List<Integer> thirdDocuments = Arrays.asList(PASSPORT);
+        Person third = new Person("Лена", false,
+                Arrays.asList(Documents.PASSPORT));
 
-        checkDocuments(firstName, firstIsFromPoland, firstDocuments);
+        checkDocuments(first.getName(), first.isFromPoland(), first.getDocuments());
         checkDocuments(secondName, secondIsFromPoland, secondDocuments);
         checkDocuments(thirdName, thirdIsFromPoland, thirdDocuments);
     }
 
-    private static void checkDocuments(String name, boolean isFromPoland, List<Integer> documents) {
-        boolean hasAllDocuments = hasAllRequiredDocuments(isFromPoland, documents);
-        printMessage(name, hasAllDocuments);
+    private static void checkDocuments(Person person) {
+        boolean hasAllDocuments = hasAllRequiredDocuments(person);
+        if (hasAllDocuments) {
+
+        }
     }
 
     private static boolean hasAllRequiredDocuments(boolean isFromPoland, List<Integer> documents) {

@@ -6,15 +6,14 @@ public class LongExercise {
 
     public static void main(String... args) {
         printBanner();
-
-        System.out.println("Current date is " + LocalDateTime.now());
-
+        printCurrentDateTime();
         blankSpaces();
-
         printMenu();
-
         blankSpaces();
+        printCurrentDateTime();
+    }
 
+    private static void printCurrentDateTime() {
         System.out.println("Current date is " + LocalDateTime.now());
     }
 

@@ -5,6 +5,34 @@ import java.time.LocalDateTime;
 public class LongExercise {
 
     public static void main(String... args) {
+        printBanner();
+
+        System.out.println("Current date is " + LocalDateTime.now());
+
+        blankSpaces();
+
+        printMenu();
+
+        blankSpaces();
+
+        System.out.println("Current date is " + LocalDateTime.now());
+    }
+
+    private static void blankSpaces() {
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+    }
+
+    private static void printMenu() {
+        System.out.println("1. Check available courses");
+        System.out.println("2. Enroll to course");
+        System.out.println("3. Check my course status");
+        System.out.println("4. Exit");
+    }
+
+    private static void printBanner() {
         System.out.println("IIIIIIIIII                   ffffffffffffffff                                hhhhhhh");
         System.out.println("I::::::::I                  f::::::::::::::::f                               h:::::h");
         System.out.println("I::::::::I                 f::::::::::::::::::f                              h:::::h");
@@ -21,24 +49,5 @@ public class LongExercise {
         System.out.println("I::::::::In::::n    n::::nf:::::::f         o:::::::::::::::os::::::::::::::s h:::::h     h:::::ha:::::aaaa::::::a r:::::r             e::::::::eeeeeeee");
         System.out.println("I::::::::In::::n    n::::nf:::::::f          oo:::::::::::oo  s:::::::::::ss  h:::::h     h:::::h a::::::::::aa:::ar:::::r              ee:::::::::::::e");
         System.out.println("IIIIIIIIIInnnnnn    nnnnnnfffffffff            ooooooooooo     sssssssssss    hhhhhhh     hhhhhhh  aaaaaaaaaa  aaaarrrrrrr                eeeeeeeeeeeeee");
-
-        System.out.println("Current date is " + LocalDateTime.now());
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-
-        System.out.println("1. Check available courses");
-        System.out.println("2. Enroll to course");
-        System.out.println("3. Check my course status");
-        System.out.println("4. Exit");
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-
-        System.out.println("Current date is " + LocalDateTime.now());
     }
 }

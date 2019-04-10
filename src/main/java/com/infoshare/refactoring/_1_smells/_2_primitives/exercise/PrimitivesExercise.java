@@ -4,42 +4,45 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static com.infoshare.refactoring._1_smells._2_primitives.exercise.Documents.*;
+
 public class PrimitivesExercise {
     public static void main(String[] args) {
         Person first = new Person("Maciek",true,
-                Collections.singletonList(Documents.ID_CARD));
+                Collections.singletonList(ID_CARD));
 
         Person second = new Person("Анастасия", false,
-                Arrays.asList(Documents.PASSPORT, Documents.BIRTH_CERTIFICATE));
+                Arrays.asList(PASSPORT, BIRTH_CERTIFICATE));
 
         Person third = new Person("Лена", false,
-                Arrays.asList(Documents.PASSPORT));
+                Arrays.asList(PASSPORT));
 
-        checkDocuments(first.getName(), first.isFromPoland(), first.getDocuments());
-        checkDocuments(secondName, secondIsFromPoland, secondDocuments);
-        checkDocuments(thirdName, thirdIsFromPoland, thirdDocuments);
+        checkDocuments(first);
+        checkDocuments(second);
+        checkDocuments(third);
     }
 
     private static void checkDocuments(Person person) {
         boolean hasAllDocuments = hasAllRequiredDocuments(person);
-        if (hasAllDocuments) {
-
-        }
-    }
-
-    private static boolean hasAllRequiredDocuments(boolean isFromPoland, List<Integer> documents) {
-        if (isFromPoland) {
-            return documents.contains(2);
-        }
-
-        return documents.contains(1) && documents.contains(3);
-    }
-
-    private static void printMessage(String name, boolean hasAllDocuments) {
-        if (hasAllDocuments) {
-            System.out.println("All required documents has been provided by " + name);
+        if (hasAllDocuments) { printSuccessMessage(person);
         } else {
-            System.out.println("Several documents are missing. Sorry " + name);
+            printWarningMessage(person);
         }
+    }
+
+    private static boolean hasAllRequiredDocuments(Person person) {
+        if (person.isFromPoland()) {
+            return person.getDocuments().contains(ID_CARD);
+        }
+
+        return person.getDocuments().contains(PASSPORT) && person.getDocuments().contains(BIRTH_CERTIFICATE);
+    }
+
+    private static void printSuccessMessage(Person person) {
+        System.out.println("All required documents has been provided by " + person.getName());
+    }
+
+    private static void printWarningMessage(Person person) {
+        System.out.println("Several documents are missing. Sorry " + person.getName());
     }
 }
